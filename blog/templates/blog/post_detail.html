@@ -1,0 +1,12 @@
+{% extends "blog/base.html" %}
+
+{% block content %}
+	<p>Original URL: {{ post.original_url }} </p>
+	<p>Final URL: {{ post.final_url }} </p>
+	<p>Title: {{ post.title }} </p>
+	<p>Html Status: {{ post.html_status }} </p>
+
+	<a href="{% url "post_edit" pk=post.pk %}">Edit</a>
+	<br>
+	<a href="{% url "post_list" %}">See URL List</a>
+{% endblock %}
