@@ -1,12 +1,12 @@
 {% extends "blog/base.html" %}
 
 {% block content %}
-	<b>URLS:</b>
+	<b><u>URLs:</u></b>
 	{% for post in posts %}
 		<p>{{ post }},</p>
-		<a href="{% url "post_edit" pk=post.pk %}">Edit</a>
-		<a href="{% url "post_detail" pk=post.pk %}">Details</a>
-		<a href="{% url "post_delete" %}">Delete</a>
+		<a href="{% url "post_edit" pk=post.pk %}">Edit</a> | 
+		<a href="{% url "post_detail" pk=post.pk %}">Details</a> | 
+		<a href="{% url "post_remove" pk=post.pk %}">Remove</a>
 
 		<br>
 		<br>

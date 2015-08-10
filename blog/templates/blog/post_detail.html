@@ -6,7 +6,8 @@
 	<p>Title: {{ post.title }} </p>
 	<p>Html Status: {{ post.html_status }} </p>
 
-	<a href="{% url "post_edit" pk=post.pk %}">Edit</a>
+	<a href="{% url "post_edit" pk=post.pk %}">Edit</a> | 
+	<a href="{% url "post_remove" pk=post.pk %}">Remove</a>
 	<br>
 	<a href="{% url "post_list" %}">See URL List</a>
 {% endblock %}
