@@ -10,8 +10,13 @@
 	</div>
 
 	<div>
+		{% if user.is_authenticated %}
+		<p class="top-menu">Hello {{ user.username }}<small>(<a href="{% url 'django.contrib.auth.views.logout' %}">Log out</a>)</small></p>
 		<b>Enter Orginal URL: </b>
-		<a href="{% url "post_new" %}">Post new</a>
+		<a href="{% url 'post_new' %}">post new</a>
+		{% else %}
+		<a href="{% url 'django.contrib.auth.views.login' %}">lock</a>
+		{% endif %}
 		<br>
 		<br>
 		<br>
