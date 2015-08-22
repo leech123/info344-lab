@@ -4,9 +4,15 @@
 	<p>Original URL: {{ post.original_url }} </p>
 	<p>Final URL: {{ post.final_url }} </p>
 	<p>Title: {{ post.title }} </p>
-	<p>Html Status: {{ post.html_status }} </p>
+	<p>Html Status: {{ post.http_status }} </p>
+	<p>Webcapture: </p><a href={{ post.webcapture }}>{{ post.webcapture }}</a>
+	</br>
+	<img src={{ post.webcapture }} alt={{ post.title}} style="width:400px;height:250px;">
+
 
 	{% if user.is_authenticated %}
+	</br>
+	<a href="{% url "post_recapture" pk=post.pk %}">Recapture</a> | 
 	<a href="{% url "post_edit" pk=post.pk %}">Edit</a> | 
 	<a href="{% url "post_remove" pk=post.pk %}">Remove</a>
 	<br>
